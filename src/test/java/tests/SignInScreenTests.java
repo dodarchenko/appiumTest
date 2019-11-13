@@ -4,10 +4,11 @@ import com.relevantcodes.extentreports.LogStatus;
 import common.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.LoginScreenFactory;
 import report.ExtentTestManager;
 
 
-public class AppiumTest extends BaseTest {
+public class SignInScreenTests extends BaseTest {
 
     LoginScreenFactory loginScreenFactory;
 

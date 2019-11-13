@@ -1,4 +1,4 @@
-package tests;
+package pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
