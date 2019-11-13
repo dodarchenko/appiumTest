@@ -3,6 +3,11 @@
     <listeners>
         <listener class-name="report.TestResultListener"/>
     </listeners>
+
+    <parameter name="deviceID" value="025ab90b307ecdd0"></parameter>
+    <parameter name="deviceName" value="NEXUS 5X"></parameter>
+    <parameter name="osVersion" value="8.0"></parameter>
+
     <test name = "Test">
         <classes>
             <class name="tests.SignInScreenTests"></class>
