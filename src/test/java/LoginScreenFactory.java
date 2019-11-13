@@ -18,7 +18,7 @@ public class LoginScreenFactory {
     @AndroidFindBy(id = "com.dev.ct.dev:id/CIdLoginView_EmailOrCTraderIdEditText")
     public WebElement emailField;
 
-    @AndroidFindBy(id = "com.dev.ct.dev:id/CIdLoginView_PasswordEditText")
+    @AndroidFindBy(id = "com.dev.ct.dev:id/CIdLoginView_PasswordEditText1")
     public WebElement passwordField;
 
     @AndroidFindBy(className = "android.widget.Button")

@@ -6,19 +6,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
+
     AppiumDriver<WebElement> driver;
 
-
-
-
-    @BeforeClass(alwaysRun = true)
+    @BeforeSuite(alwaysRun = true)
     public void setUp() throws MalformedURLException {
 
         //Set the Desired Capabilities
@@ -39,5 +39,18 @@ public class BaseTest {
         //driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    @AfterSuite
+    public void tearDown(){
+        driver.quit();
+    }
+
+    public AppiumDriver<WebElement> getDriver() {
+        return driver;
+    }
+
+    public void setDriver(AppiumDriver<WebElement> driver) {
+        this.driver = driver;
     }
 }
