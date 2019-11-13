@@ -41,7 +41,7 @@ public class TestResultListener extends BaseTest implements ITestListener{
 
     @Override
     public void onStart(ITestContext iTestContext) {
-        iTestContext.setAttribute("WebDriver", this.driver);
+       iTestContext.setAttribute("WebDriver", this.driver);
     }
 
     @Override

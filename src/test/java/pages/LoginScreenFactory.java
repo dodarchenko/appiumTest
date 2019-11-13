@@ -23,6 +23,16 @@ public class LoginScreenFactory {
     @AndroidFindBy(className = "android.widget.Button")
     public WebElement signInButton;
 
+    @AndroidFindBy(id = "android:id/button2")
+    public WebElement tryAgainButton;
+
+    @AndroidFindBy(id = "android:id/button1")
+    public WebElement resetPasswordButton;
+
+    @AndroidFindBy(id="com.dev.ct.dev:id/CIdLoginView_CreateANewAccountHyperlink")
+    public WebElement createAccountButton;
+
+
 
     public void fillEmail(String email){
         emailField.clear();
@@ -36,5 +46,12 @@ public class LoginScreenFactory {
 
     public void loginClick(){
         signInButton.click();
+    }
+
+    public void tryAgainButtonClick(){
+        tryAgainButton.click();
+    }
+    public void resetPasswordClick(){
+        resetPasswordButton.click();
     }
 }
