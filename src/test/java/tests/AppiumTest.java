@@ -1,6 +1,10 @@
+package tests;
+
 import com.relevantcodes.extentreports.LogStatus;
+import common.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import report.ExtentTestManager;
 
 
 public class AppiumTest extends BaseTest {

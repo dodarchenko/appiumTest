@@ -1,14 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name = "tests">
     <listeners>
-        <listener class-name="TestResultListener"/>
+        <listener class-name="report.TestResultListener"/>
     </listeners>
     <test name = "Test">
         <parameter name="environmentURL" value="http://automationpractice.com/index.php/"></parameter>
         <parameter name="browser" value="chrome"></parameter>
 
         <classes>
-            <class name="AppiumTest"></class>
+            <class name="tests.AppiumTest"></class>
         </classes>
     </test>
 </suite>

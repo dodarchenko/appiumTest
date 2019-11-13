@@ -1,3 +1,5 @@
+package report;
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import java.util.HashMap;

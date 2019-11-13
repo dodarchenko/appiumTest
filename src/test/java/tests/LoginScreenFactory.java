@@ -1,3 +1,5 @@
+package tests;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -15,7 +17,7 @@ public class LoginScreenFactory {
     @AndroidFindBy(id = "com.dev.ct.dev:id/CIdLoginView_EmailOrCTraderIdEditText")
     public WebElement emailField;
 
-    @AndroidFindBy(id = "com.dev.ct.dev:id/CIdLoginView_PasswordEditText1")
+    @AndroidFindBy(id = "com.dev.ct.dev:id/CIdLoginView_PasswordEditText")
     public WebElement passwordField;
 
     @AndroidFindBy(className = "android.widget.Button")

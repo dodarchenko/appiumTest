@@ -1,3 +1,5 @@
+package report;
+import common.BaseTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.OutputType;
@@ -25,15 +27,12 @@ public class TestResultListener extends BaseTest implements ITestListener{
         AppiumDriver  <WebElement> driver = ((BaseTest) testClass).getDriver();
         String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
         ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed"+ ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
-
 }
 
         @Override
     public void onTestSkipped(ITestResult iTestResult) {
-
         ExtentTestManager.skippedTest(iTestResult.getMethod().getMethodName(), " ");
         ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
-
     }
 
     @Override
@@ -43,7 +42,6 @@ public class TestResultListener extends BaseTest implements ITestListener{
     @Override
     public void onStart(ITestContext iTestContext) {
         iTestContext.setAttribute("WebDriver", this.driver);
-
     }
 
     @Override

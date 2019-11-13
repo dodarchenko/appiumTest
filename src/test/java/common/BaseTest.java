@@ -1,3 +1,5 @@
+package common;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    AppiumDriver<WebElement> driver;
+    public AppiumDriver<WebElement> driver;
 
     @BeforeSuite(alwaysRun = true)
     public void setUp() throws MalformedURLException {
