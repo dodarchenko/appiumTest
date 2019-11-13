@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "tests">
+<suite name = "MobileSMoke">
     <listeners>
         <listener class-name="report.TestResultListener"/>
     </listeners>

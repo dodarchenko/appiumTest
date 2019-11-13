@@ -34,6 +34,7 @@ public class BaseTest {
 
         //driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+        driver.resetApp();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 

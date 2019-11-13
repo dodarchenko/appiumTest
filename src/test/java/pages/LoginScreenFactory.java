@@ -32,6 +32,9 @@ public class LoginScreenFactory {
     @AndroidFindBy(id="com.dev.ct.dev:id/CIdLoginView_CreateANewAccountHyperlink")
     public WebElement createAccountButton;
 
+    @AndroidFindBy(id="com.dev.ct.dev:id/TutorialStartStepView_NotNowBottom")
+    public WebElement notNowTutorialButton;
+
 
 
     public void fillEmail(String email){
@@ -53,5 +56,8 @@ public class LoginScreenFactory {
     }
     public void resetPasswordClick(){
         resetPasswordButton.click();
+    }
+    public void createAccountHyperLinkClick(){
+        createAccountButton.click();
     }
 }
