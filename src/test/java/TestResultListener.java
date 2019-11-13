@@ -1,14 +1,9 @@
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.AppiumDriver;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.*;
-
-import java.io.File;
-import java.io.IOException;
 
 
 public class TestResultListener extends BaseTest implements ITestListener{
