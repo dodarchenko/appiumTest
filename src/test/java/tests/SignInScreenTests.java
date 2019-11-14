@@ -5,18 +5,18 @@ import common.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.LoginScreenFactory;
+import pages.LoginScreenPage;
 import pages.SignUpPage;
 import report.ExtentTestManager;
 
 
 public class SignInScreenTests extends BaseTest {
 
-    LoginScreenFactory loginScreenFactory;
+    LoginScreenPage loginScreenPage;
     SignUpPage signUpPage;
     @BeforeClass
     public void startUp(){
-        loginScreenFactory = new LoginScreenFactory(driver);
+        loginScreenPage = new LoginScreenPage(driver);
         signUpPage = new SignUpPage(driver);
     }
 
@@ -30,13 +30,13 @@ public class SignInScreenTests extends BaseTest {
                 ExtentTestManager.getTest().log(LogStatus.INFO, "Switch to Sign in Screen");
             }
 
-            loginScreenFactory.fillEmail("dodarchenko+4e");
+            loginScreenPage.fillEmail("dodarchenko+4e");
             ExtentTestManager.getTest().log(LogStatus.INFO, "Fill in email");
-            loginScreenFactory.fillPassword("Testing1");
+            loginScreenPage.fillPassword("Testing1");
             ExtentTestManager.getTest().log(LogStatus.INFO, "Fill in password");
-            loginScreenFactory.loginClick();
+            loginScreenPage.loginClick();
             ExtentTestManager.getTest().log(LogStatus.INFO, "Click Login button");
-            Assert.assertTrue(loginScreenFactory.notNowTutorialButton.isDisplayed());
+            Assert.assertTrue(loginScreenPage.notNowTutorialButton.isDisplayed());
         } catch (Exception e) {
             ExtentTestManager.getTest().log(LogStatus.ERROR, e.getMessage());
             Assert.fail();
@@ -47,41 +47,30 @@ public class SignInScreenTests extends BaseTest {
     public  void checkPasswordValidationPopUp(){
         ExtentTestManager.getTest().setDescription("Test password validation Pop up");
         try{
-            loginScreenFactory.fillEmail("dodarchenko+4e");
+            loginScreenPage.fillEmail("dodarchenko+4e");
             ExtentTestManager.getTest().log(LogStatus.INFO, "Fill in email");
-            loginScreenFactory.fillPassword("dsadasda");
+            loginScreenPage.fillPassword("dsadasda");
             ExtentTestManager.getTest().log(LogStatus.INFO, "Fill in invalid password");
-            loginScreenFactory.loginClick();
+            loginScreenPage.loginClick();
             ExtentTestManager.getTest().log(LogStatus.INFO, "Click Login button");
-            Assert.assertTrue(loginScreenFactory.tryAgainButton.isDisplayed());
-            loginScreenFactory.tryAgainButtonClick();
+            Assert.assertTrue(loginScreenPage.tryAgainButton.isDisplayed());
+            loginScreenPage.tryAgainButtonClick();
         }catch (Exception e){
             ExtentTestManager.getTest().log(LogStatus.ERROR, e.getMessage());
             Assert.fail();
         }
     }
+
     @Test
-    public void openSignInScreen(){
-        ExtentTestManager.getTest().setDescription("Test transition to Sign in screen");
+    public void checkEmailValidationMessage(){
         try{
-            signUpPage.alreadyHaveAnAccountLinkClick();
-            ExtentTestManager.getTest().log(LogStatus.INFO, "Switch to Sign in screen");
-            Assert.assertTrue(loginScreenFactory.createAccountButton.isDisplayed());
+            loginScreenPage.fillEmail("asdasd@asda");
+            Assert.assertTrue(loginScreenPage.vallidationErrorMessage.isDisplayed());
         }catch (Exception e){
             ExtentTestManager.getTest().log(LogStatus.ERROR, e.getMessage());
             Assert.fail();
         }
     }
-    @Test(priority = 1)
-    public void openSignUpScreen(){
-        ExtentTestManager.getTest().setDescription("Test transition to Sign Up screen");
-        try{
-            loginScreenFactory.createAccountHyperLinkClick();
-            ExtentTestManager.getTest().log(LogStatus.INFO, "Switch to Sign up screen");
-            Assert.assertTrue(signUpPage.alreadyHaveAnAccountLink.isDisplayed());
-        }catch (Exception e){
-            ExtentTestManager.getTest().log(LogStatus.ERROR, e.getMessage());
-            Assert.fail();
-        }
-    }
+
+
 }

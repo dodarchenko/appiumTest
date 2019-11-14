@@ -25,6 +25,18 @@ public class SignUpPage {
     @AndroidFindBy(id = "com.dev.ct.dev:id/CIdCreateAccountView_LogInHyperlink")
     public WebElement alreadyHaveAnAccountLink;
 
+    @AndroidFindBy(id ="com.dev.ct.dev:id/textinput_error")
+    public WebElement vallidationErrorMessage;
+
+    @AndroidFindBy (id = "com.dev.ct.dev:id/ShowSelectLanguageDialogButton_Background")
+    public WebElement langaugeSelector;
+
+    @AndroidFindBy (xpath = "//android.widget.TextView[@text='Русский']")
+    public WebElement russianLanguageInSelector;
+
+    @AndroidFindBy (xpath = "//android.widget.TextView[@text='English']")
+    public WebElement englishLanguageInSelector;
+
 
     public void fillEmail(String email){
         emailField.clear();
@@ -38,6 +50,22 @@ public class SignUpPage {
 
     public void alreadyHaveAnAccountLinkClick(){
         alreadyHaveAnAccountLink.click();
+    }
+
+    public void signUpButtonClick(){
+        signUpButton.click();
+    }
+
+    public void openLanguageSelector(){
+        langaugeSelector.click();
+    }
+
+    public void selectLanguageInSelector(WebElement element){
+        element.click();
+    }
+
+    public String getTextOfElement(WebElement element){
+        return element.getText();
     }
 
 }

@@ -6,11 +6,9 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginScreenFactory {
+public class LoginScreenPage {
 
-
-    public LoginScreenFactory(AppiumDriver<WebElement> driver) {
-
+    public LoginScreenPage(AppiumDriver<WebElement> driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
@@ -35,7 +33,8 @@ public class LoginScreenFactory {
     @AndroidFindBy(id="com.dev.ct.dev:id/TutorialStartStepView_NotNowBottom")
     public WebElement notNowTutorialButton;
 
-
+    @AndroidFindBy(id ="com.dev.ct.dev:id/textinput_error")
+    public WebElement vallidationErrorMessage;
 
     public void fillEmail(String email){
         emailField.clear();
